@@ -29,11 +29,13 @@ export const ArticlesList = () => {
     setCurrentPage(currentPage + 1);
   }
 
-  const filteredArticles = articles.filter(
-    article =>
-      article.title.toLowerCase().includes(query.toLowerCase()) ||
-      article.description.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredArticles = articles.length > 0
+    ? articles.filter(
+      article =>
+        article.title.toLowerCase().includes(query.toLowerCase()) ||
+        article.description.toLowerCase().includes(query.toLowerCase())
+    )
+    : [];
 
   const displayArticles = pinnedArticle ? [pinnedArticle, ...filteredArticles.slice(0, numArticles - 1)] : filteredArticles.slice(0, numArticles);
 
@@ -43,7 +45,7 @@ export const ArticlesList = () => {
 
   return (
     <div className="App">
-      <h2 style={{textAlign: "center"}}>Find news</h2>
+      <h2 style={{ textAlign: "center" }}>Find news</h2>
       <input
         className="findNews"
         type="text"
