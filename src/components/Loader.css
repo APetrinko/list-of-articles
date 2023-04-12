@@ -1,0 +1,35 @@
+.loader {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader__content {
+  width: 2em;
+  height: 2em;
+  margin: 1em auto;
+  border-radius: 50%;
+  border: 0.3em solid #313237;
+  border-left-color: #89939a;
+  box-shadow: 0 0 1em #313237;
+  animation-name: load;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(0.6);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
