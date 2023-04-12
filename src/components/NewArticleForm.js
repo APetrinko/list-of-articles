@@ -50,11 +50,12 @@ export const NewArticleForm = () => {
         <h1 className="title">Your article will look like this.</h1>
         <div className="news-item">
           <a
-            href=""
+            href="/"
             className="news-item"
             target="_blank"
           >
             <div className="news-item__image">
+            {/* eslint-disable-next-line */}
               <img src={urlToImage} alt="News Image" />
             </div>
             <div className="news-item__details">

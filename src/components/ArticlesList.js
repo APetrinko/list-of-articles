@@ -70,8 +70,10 @@ export const ArticlesList = () => {
                 className="news-item"
                 key={displayArticles.indexOf(el)}
                 target="_blank"
+                rel="noreferrer"
               >
                 <div className="news-item__image">
+                  {/* eslint-disable-next-line */}
                   <img src={el.urlToImage} alt="News Image" />
                 </div>
                 <div className="news-item__details">
