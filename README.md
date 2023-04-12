@@ -1,7 +1,24 @@
 ## Articles list 
 This React app called ArticlesList that displays a list of news articles fetched from an API. The component provides functionality to search for articles, display a certain number of articles per page, and pin/unpin articles to the top of the list. It also allows the user to delete articles that created by user.
-## Demo link 
-[DEMO](https://apetrinko.github.io/list-of-articles/)
+## To run the project locally, follow these steps:
+
+<ul>
+<li>Clone the repository to your local machine</li>
+<li>Open the project</li>
+<li>Install the necessary packages</li>
+</ul>
+
+```sh
+npm install
+```
+<ul>
+<li>Compile and Hot-Reload for Development</li>
+</ul>
+
+```sh
+npm start
+```
+
 
 ## Stack of technologies I used:
 <p align="left">
@@ -29,29 +46,3 @@ This React app called ArticlesList that displays a list of news articles fetched
 <li>Material UI</li>
 </ul>
 
-## To run the project locally, follow these steps:
-
-<ul>
-<li>Clone the repository to your local machine</li>
-<li>Open the project</li>
-<li>Install the necessary packages</li>
-</ul>
-
-```sh
-npm install
-```
-<ul>
-<li>Compile and Hot-Reload for Development</li>
-</ul>
-
-```sh
-npm start
-```
-
-<ul>
-<li>Deploy project</li>
-</ul>
-
-```sh
-npm run deploy
-```
