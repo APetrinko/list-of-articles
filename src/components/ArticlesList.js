@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles } from "../fetchArticles/fetchArticles";
 import { NewArticleForm } from "./NewArticleForm";
@@ -29,16 +29,16 @@ export const ArticlesList = () => {
     setCurrentPage(currentPage + 1);
   }
 
-  const filteredArticles = articles.length > 0
-    ? articles.filter(
-      article =>
-        article.title.toLowerCase().includes(query.toLowerCase()) ||
-        article.description.toLowerCase().includes(query.toLowerCase())
-    )
-    : [];
+  const filteredArticles = articles.length > 0 ? articles.filter(
+    article =>
+      article.title.toLowerCase().includes(query.toLowerCase()) ||
+      article.description.toLowerCase().includes(query.toLowerCase())
+  ) : [];
 
-  const displayArticles = pinnedArticle ? [pinnedArticle, ...filteredArticles.slice(0, numArticles - 1)] : filteredArticles.slice(0, numArticles);
-
+  const displayArticles = useMemo(() => {
+    return pinnedArticle ? [pinnedArticle, ...filteredArticles.slice(0, numArticles - 1)] : filteredArticles.slice(0, numArticles);
+  }, [articles, filteredArticles, numArticles, pinnedArticle]);
+  
   const handleInputChange = event => {
     setQuery(event.target.value);
   };
